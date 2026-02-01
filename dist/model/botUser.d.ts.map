@@ -1,0 +1,1 @@
+{"version":3,"file":"botUser.d.ts","sourceRoot":"","sources":["../../model/botUser.ts"],"names":[],"mappings":"AAAA,OAAO,EAAY,KAAK,EAAC,MAAM,WAAW,CAAA;AAG1C,qBAAa,OAAQ,SAAQ,KAAK;IAC9B,SAAS,CAAC,EAAE,MAAM,CAAC;IACnB,YAAY,CAAC,EAAE,MAAM,CAAC;IACtB,OAAO,CAAC,EAAE,MAAM,CAAC;CAEpB"}

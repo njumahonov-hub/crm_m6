@@ -1,0 +1,1 @@
+{"version":3,"file":"bot.model.d.ts","sourceRoot":"","sources":["../../model/bot.model.ts"],"names":[],"mappings":"AAAA,OAAO,EAAY,KAAK,EAAC,MAAM,WAAW,CAAA;AAG1C,qBAAa,GAAI,SAAQ,KAAK;IAC1B,SAAS,CAAC,EAAE,MAAM,CAAC;IACnB,YAAY,CAAC,EAAE,MAAM,CAAC;IACtB,OAAO,CAAC,EAAE,MAAM,CAAC;IACjB,OAAO,CAAC,EAAE,MAAM,CAAC;CAEpB"}
