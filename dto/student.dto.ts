@@ -14,5 +14,7 @@ export interface UpdateStudentDto {
   parent_name?: string;
   parent_number?: string;
   image_url?: string;
+  left_at?: Date
+  joined_at?: Date
 }
 

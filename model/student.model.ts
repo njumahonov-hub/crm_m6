@@ -8,6 +8,8 @@ export class Student extends Model {
     parent_name?: string;
     parent_number?: string;
     image_url?: string;
+    left_at?: Date| null
+    joined_at!: Date
 }
 
 Student.init({
@@ -38,6 +40,14 @@ Student.init({
     },
      image_url: {
         type: DataTypes.STRING,
+        allowNull: false
+    },
+       left_at: {
+        type: DataTypes.DATE,
+        allowNull: true
+    },
+     joined_at: {
+        type: DataTypes.DATE,
         allowNull: false
     },
 },
