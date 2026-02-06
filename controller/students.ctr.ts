@@ -1,10 +1,9 @@
 
 import type { NextFunction, Request, Response } from "express"
-import { Student } from "../model/student.model.js"
 import type { CreateStudentDto, UpdateStudentDto } from "../dto/student.dto.js"
 import { Op } from "sequelize"
 import sequelize from "../config/config.js"
-import { group } from "node:console"
+import { Student } from "../model/assocation.js"
 
 
 Student.sync({force:false})
@@ -99,8 +98,8 @@ export const statistics = async (
 
 export const AddStudents = async (req:Request, res:Response, next:NextFunction) => {
     try {
-        const {full_name, phone_number, profession, parent_name, parent_number, image_url} = req.body as CreateStudentDto
-        await Student.create({full_name, phone_number, profession, parent_name, parent_number, image_url, joined_at: new Date()} )
+        const {full_name, phone_number, profession, parent_name, parent_number, image_url, added_by, group_by} = req.body as CreateStudentDto
+        await Student.create({full_name, phone_number, profession, parent_name, parent_number, image_url, joined_at: new Date(), added_by, group_by} )
 
         res.status(201).json({
             message: "Added student"
@@ -141,7 +140,7 @@ export const UpdateStudents = async (req:Request, res:Response, next:NextFunctio
         const newID = Number(req.params.id )
 
     
-        const {full_name, phone_number, profession, parent_name, parent_number, image_url} = req.body as UpdateStudentDto
+        const {full_name, phone_number, profession, parent_name, parent_number, image_url,added_by, group_by} = req.body as UpdateStudentDto
 
        
         const foundedUser = await Student.findByPk(newID)
@@ -152,7 +151,7 @@ export const UpdateStudents = async (req:Request, res:Response, next:NextFunctio
             })
         }
 
-        await Student.update({full_name, phone_number, profession, parent_name, parent_number, image_url}, {where:{id: newID}})
+        await Student.update({full_name, phone_number, profession, parent_name, parent_number, image_url,added_by, group_by}, {where:{id: newID}})
 
         res.status(200).json({
             message: "update student"
@@ -189,3 +188,6 @@ export const DeleteStudents = async (req:Request, res:Response, next:NextFunctio
         })
     }
 }
+
+
+
