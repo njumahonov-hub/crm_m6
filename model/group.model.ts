@@ -6,7 +6,8 @@ import { GroupEnum } from "../enum/group.enum.js";
 export class Group extends Model {
     title?: string;
     days?: string;
-    time?: string;
+    start_time?: string;
+    end_time?: string;
     image_url?: string;
    added_by?: number;
    teacher_id?: number
@@ -26,7 +27,11 @@ Group.init({
         type: DataTypes.ENUM(...Object.values(GroupEnum)),
         allowNull: false
     },
-     time: {
+     start_time: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+     end_time: {
         type: DataTypes.STRING,
         allowNull: false
     },
